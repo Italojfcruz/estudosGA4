@@ -7,10 +7,10 @@ var listButton = document.querySelectorAll('a.menu-lista-link');
 function onClickElementButton(event, element) {
     var name  = element.innerText;
     if(name=='Entre em Contato') {
-       dataLayer.push({event:'click_contato',categoria:'menu',ação:'entre_em_contato',rotulo:'link_externo'});
+       dataLayer.push({event:'DL_click_contato',categoria:'menu',ação:'entre_em_contato',rotulo:'link_externo'});
     }
     if(name=='Download PDF') {
-         dataLayer.push({event:'click_download',categoria:'menu',ação:'download_pdf',rotulo:'download_pdf'});
+         dataLayer.push({event:'DL_click_download',categoria:'menu',ação:'download_pdf',rotulo:'download_pdf'});
     }
   //console.log(name);
 }
@@ -28,7 +28,7 @@ function onClickElementCards(event, element) {
     var title = element.querySelector('p.card-title');
     var name = title.innerText;
     //ga('send', 'event', 'analise','ver_mais',name)
-    dataLayer.push({event:'click_cards',categoria:'ver_mais',ação:'ver_mais',rotulo:name});
+    dataLayer.push({event:'DL_click_cards',categoria:'ver_mais',ação:'ver_mais',rotulo:name});
     console.log(name);
 }
 
@@ -74,7 +74,7 @@ function sendDados(idCampo){
                      
                     console.log("dado enviado!")
                     //ga('send','event', 'contato',nomeCampo, 'preencheu')
-                    dataLayer.push({event:'preencheu_campo',categoria:'contato',ação:nomeCampo,rotulo:'preencheu'});
+                    dataLayer.push({event:'DL_preencheu_campo',categoria:'contato',ação:nomeCampo,rotulo:'preencheu'});
                     texto_copy = texto 
                     
                 }
@@ -107,7 +107,7 @@ if(aceito)
             if(i%2 == 0)
             {
                 //ga('send','event', 'contato','aceito', 'preencheu')
-                dataLayer.push({event:'preencheu_campo',categoria:'contato',ação:'aceito',rotulo:'preencheu'});
+                dataLayer.push({event:'DL_preencheu_campo',categoria:'contato',ação:'aceito',rotulo:'preencheu'});
             }
         
     }
