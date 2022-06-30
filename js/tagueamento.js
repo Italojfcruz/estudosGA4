@@ -1,43 +1,40 @@
 
-/*
-var idCampo = "nome"
+var  idCampo = "nome"
 var  texto_copy = ""
 
-document.querySelector('a.menu-lista-link.menu-lista-contato').addEventListener('click', (event) => {
-    ga(
-        'send', 
-        'event', 
-        'menu', 
-        'entre_em_contato', 
-        'link_externo'
-    );
-})
-
-
-document.querySelector('a.menu-lista-link.menu-lista-download').addEventListener('click', (event) => {
-    ga(
-        'send',
-       'event', 
-       'menu', 
-       'download_pdf', 
-       'download_pdf');
-})
+//  
+var listButton = document.querySelectorAll('a.menu-lista-link');
+function onClickElementButton(event, element) {
+    var name  = element.innerText;
+    if(name=='Entre em Contato') {
+       dataLayer.push({event:'click_contato',categoria:'menu',ação:'entre_em_contato',rotulo:'link_externo'});
+    }
+    if(name=='Download PDF') {
+         dataLayer.push({event:'click_download',categoria:'menu',ação:'download_pdf',rotulo:'download_pdf'});
+    }
+  //console.log(name);
+}
+                                            
+function buttonListCallback(element) {
+    element.addEventListener('click', function(event){ onClickElementButton(event, element)}); 
+}
+listButton.forEach(buttonListCallback);
+//
 
 //
 
 var cardList = document.querySelectorAll('div.card');
-
-function onClickElement(event, element) {
+function onClickElementCards(event, element) {
     var title = element.querySelector('p.card-title');
     var name = title.innerText;
-    ga('send', 'event', 'analise','ver_mais',name)
+    //ga('send', 'event', 'analise','ver_mais',name)
+    dataLayer.push({event:'click_cards',categoria:'ver_mais',ação:'ver_mais',rotulo:name});
     console.log(name);
 }
 
 function cardListCallback(element) {
-    element.addEventListener('click', (event) => { onClickElement(event, element)})
+    element.addEventListener('click', function(event){ onClickElementCards(event, element)});
 }
-
 cardList.forEach(cardListCallback);
 
 //
@@ -76,7 +73,8 @@ function sendDados(idCampo){
                 {
                      
                     console.log("dado enviado!")
-                    ga('send','event', 'contato',nomeCampo, 'preencheu')
+                    //ga('send','event', 'contato',nomeCampo, 'preencheu')
+                    dataLayer.push({event:'preencheu_campo',categoria:'contato',ação:nomeCampo,rotulo:'preencheu'});
                     texto_copy = texto 
                     
                 }
@@ -108,10 +106,9 @@ if(aceito)
             
             if(i%2 == 0)
             {
-                ga('send','event', 'contato','aceito', 'preencheu')
-                
+                //ga('send','event', 'contato','aceito', 'preencheu')
+                dataLayer.push({event:'preencheu_campo',categoria:'contato',ação:'aceito',rotulo:'preencheu'});
             }
         
     }
 }
-*/
