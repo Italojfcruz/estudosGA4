@@ -3,7 +3,7 @@ var  idCampo = "nome"
 var  texto_copy = ""
 //
 document.addEventListener('DOMContentLoaded', function(event){
-        console.log('Pagina:',document.title);
+        console.log('Pagina:',document.URL);
 });
 
 //  
