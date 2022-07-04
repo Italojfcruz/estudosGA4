@@ -4,7 +4,7 @@ var  texto_copy = ""
 //
 document.addEventListener('DOMContentLoaded', function(event){
         //console.log('Pagina:',document.URL);
-        datalayer.push({event:'page_view',categoria:'pagina',acao:'view',rotulo:document.URL});
+        datalayer.push({event:'page_view_DL',categoria:'pagina',acao:'view',rotulo:document.URL});
 });
 
 //  
