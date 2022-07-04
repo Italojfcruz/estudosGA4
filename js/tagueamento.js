@@ -2,11 +2,12 @@
 var  idCampo = "nome"
 var  texto_copy = ""
 //
+/*
 document.addEventListener('DOMContentLoaded', function(event){
         //console.log('Pagina:',document.URL);
         datalayer.push({event:'page_view_DL',categoria:'pagina',acao:'view',rotulo:document.URL});
 });
-
+*/
 //  
 var listButton = document.querySelectorAll('a.menu-lista-link');
 function onClickElementButton(event, element) {
