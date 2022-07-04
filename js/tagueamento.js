@@ -1,6 +1,10 @@
 
 var  idCampo = "nome"
 var  texto_copy = ""
+//
+document.addEventListener('DOMContentLoaded', function(event){
+        console.log('Pafina'document.title);
+});
 
 //  
 var listButton = document.querySelectorAll('a.menu-lista-link');
