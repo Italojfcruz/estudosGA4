@@ -1,4 +1,4 @@
-
+/*
 var  idCampo = "nome"
 var  texto_copy = ""
 //
@@ -118,3 +118,4 @@ if(aceito)
         
     }
 }
+*/
